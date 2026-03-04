@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: wapproject
+    env: python
+    plan: free
+    buildCommand: "./build.sh"
+    startCommand: "./start.sh"
+    autoDeploy: true
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: wapproject.settings
+      - key: PYTHONUNBUFFERED
+        value: "1"
