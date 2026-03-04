@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="card p-4">
-  <div class="d-flex justify-content-between align-items-center mb-3">
-    <h4 class="mb-0">{{ title }} <small class="text-muted">({{ count|default:0 }})</small></h4>
+<div>
+  <div>
+    <h4>{{ title }} <small>({{ count|default:0 }})</small></h4>
 
     {% if key == "department" %}
       <a class="btn btn-primary" href="{% url 'department_add' %}">+ Add</a>
@@ -23,7 +23,7 @@
   </div>
 
   {% if data %}
-    <div class="table-responsive">
+    <div>
       <table class="table table-striped table-sm">
         <thead>
           <tr>
@@ -51,9 +51,9 @@
                 <td>{{ obj.dept_name }}</td>
                 <td>{{ obj.location }}</td>
                 <td>{{ obj.manager }}</td>
-                <td class="text-end">
-                  <a class="btn btn-sm btn-outline-secondary" href="{% url 'department_edit' obj.id %}">Edit</a>
-                  <a class="btn btn-sm btn-outline-danger" href="{% url 'department_delete' obj.id %}">Delete</a>
+                <td>
+                  <a class="btn btn-sm btn-secondary" href="{% url 'department_edit' obj.id %}">Edit</a>
+                  <a class="btn btn-sm" href="{% url 'department_delete' obj.id %}">Delete</a>
                 </td>
               {% elif key == "employee" %}
                 <td>{{ obj.emp_name }}</td>
@@ -61,17 +61,17 @@
                 <td>{{ obj.dept }}</td>
                 <td>{{ obj.email }}</td>
                 <td>{{ obj.phone }}</td>
-                <td class="text-end">
-                  <a class="btn btn-sm btn-outline-secondary" href="{% url 'employee_edit' obj.id %}">Edit</a>
-                  <a class="btn btn-sm btn-outline-danger" href="{% url 'employee_delete' obj.id %}">Delete</a>
+                <td>
+                  <a class="btn btn-sm btn-secondary" href="{% url 'employee_edit' obj.id %}">Edit</a>
+                  <a class="btn btn-sm" href="{% url 'employee_delete' obj.id %}">Delete</a>
                 </td>
               {% elif key == "customer" %}
                 <td>{{ obj.customer_name }}</td>
                 <td>{{ obj.contact_number }}</td>
                 <td>{{ obj.address }}</td>
-                <td class="text-end">
-                  <a class="btn btn-sm btn-outline-secondary" href="{% url 'customer_edit' obj.id %}">Edit</a>
-                  <a class="btn btn-sm btn-outline-danger" href="{% url 'customer_delete' obj.id %}">Delete</a>
+                <td>
+                  <a class="btn btn-sm btn-secondary" href="{% url 'customer_edit' obj.id %}">Edit</a>
+                  <a class="btn btn-sm" href="{% url 'customer_delete' obj.id %}">Delete</a>
                 </td>
               {% elif key == "project" %}
                 <td>{{ obj.project_name }}</td>
@@ -80,33 +80,33 @@
                 <td>{{ obj.start_date }}</td>
                 <td>{{ obj.end_date }}</td>
                 <td>{{ obj.budget }}</td>
-                <td class="text-end">
-                  <a class="btn btn-sm btn-outline-secondary" href="{% url 'project_edit' obj.id %}">Edit</a>
-                  <a class="btn btn-sm btn-outline-danger" href="{% url 'project_delete' obj.id %}">Delete</a>
+                <td>
+                  <a class="btn btn-sm btn-secondary" href="{% url 'project_edit' obj.id %}">Edit</a>
+                  <a class="btn btn-sm" href="{% url 'project_delete' obj.id %}">Delete</a>
                 </td>
               {% elif key == "product" %}
                 <td>{{ obj.product_type }}</td>
                 <td>{{ obj.cost }}</td>
                 <td>{{ obj.description }}</td>
-                <td class="text-end">
-                  <a class="btn btn-sm btn-outline-secondary" href="{% url 'product_edit' obj.id %}">Edit</a>
-                  <a class="btn btn-sm btn-outline-danger" href="{% url 'product_delete' obj.id %}">Delete</a>
+                <td>
+                  <a class="btn btn-sm btn-secondary" href="{% url 'product_edit' obj.id %}">Edit</a>
+                  <a class="btn btn-sm" href="{% url 'product_delete' obj.id %}">Delete</a>
                 </td>
               {% elif key == "assignedto" %}
                 <td>{{ obj.employee }}</td>
                 <td>{{ obj.project }}</td>
                 <td>{{ obj.role_in_project }}</td>
                 <td>{{ obj.hours_allocated }}</td>
-                <td class="text-end">
-                  <a class="btn btn-sm btn-outline-secondary" href="{% url 'assignedto_edit' obj.id %}">Edit</a>
-                  <a class="btn btn-sm btn-outline-danger" href="{% url 'assignedto_delete' obj.id %}">Delete</a>
+                <td>
+                  <a class="btn btn-sm btn-secondary" href="{% url 'assignedto_edit' obj.id %}">Edit</a>
+                  <a class="btn btn-sm" href="{% url 'assignedto_delete' obj.id %}">Delete</a>
                 </td>
               {% elif key == "projectproduct" %}
                 <td>{{ obj.project }}</td>
                 <td>{{ obj.product }}</td>
-                <td class="text-end">
-                  <a class="btn btn-sm btn-outline-secondary" href="{% url 'projectproduct_edit' obj.id %}">Edit</a>
-                  <a class="btn btn-sm btn-outline-danger" href="{% url 'projectproduct_delete' obj.id %}">Delete</a>
+                <td>
+                  <a class="btn btn-sm btn-secondary" href="{% url 'projectproduct_edit' obj.id %}">Edit</a>
+                  <a class="btn btn-sm" href="{% url 'projectproduct_delete' obj.id %}">Delete</a>
                 </td>
               {% endif %}
             </tr>
@@ -115,7 +115,7 @@
       </table>
     </div>
   {% else %}
-    <div class="alert alert-info mb-0">No data yet.</div>
+    <div>No data yet.</div>
   {% endif %}
 </div>
 

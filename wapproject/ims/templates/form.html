@@ -1,30 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="content-card">
-  <h4 class="card-title">{{ title }}</h4>
+<div>
+  <h4>{{ title }}</h4>
 
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
 
-    <div class="form-actions">
-      <button class="button button-success" type="submit">Save</button>
+    <div>
+      <button class="btn btn-success" type="submit">Save</button>
 
       {% if key == "department" %}
-        <a class="button button-secondary" href="{% url 'department_list' %}">Back</a>
+        <a class="btn btn-secondary" href="{% url 'department_list' %}">Back</a>
       {% elif key == "employee" %}
-        <a class="button button-secondary" href="{% url 'employee_list' %}">Back</a>
+        <a class="btn btn-secondary" href="{% url 'employee_list' %}">Back</a>
       {% elif key == "customer" %}
-        <a class="button button-secondary" href="{% url 'customer_list' %}">Back</a>
+        <a class="btn btn-secondary" href="{% url 'customer_list' %}">Back</a>
       {% elif key == "project" %}
-        <a class="button button-secondary" href="{% url 'project_list' %}">Back</a>
+        <a class="btn btn-secondary" href="{% url 'project_list' %}">Back</a>
       {% elif key == "product" %}
-        <a class="button button-secondary" href="{% url 'product_list' %}">Back</a>
+        <a class="btn btn-secondary" href="{% url 'product_list' %}">Back</a>
       {% elif key == "assignedto" %}
-        <a class="button button-secondary" href="{% url 'assignedto_list' %}">Back</a>
+        <a class="btn btn-secondary" href="{% url 'assignedto_list' %}">Back</a>
       {% elif key == "projectproduct" %}
-        <a class="button button-secondary" href="{% url 'projectproduct_list' %}">Back</a>
+        <a class="btn btn-secondary" href="{% url 'projectproduct_list' %}">Back</a>
       {% endif %}
     </div>
   </form>

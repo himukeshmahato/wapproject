@@ -25,13 +25,13 @@
 
   </style>
 </head>
-<body class="bg-light">
+<body>
 
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar">
   <div class="container">
-    <a class="navbar-brand fw-bold" href="{% url 'dashboard' %}">IMS</a>
+    <a class="navbar-brand" href="{% url 'dashboard' %}">IMS</a>
 
-    <div class="d-flex flex-wrap ">
+    <div>
       <a class="btn btn-sm btn-outline-light" href="{% url 'department_list' %}">Department</a>
       <a class="btn btn-sm btn-outline-light" href="{% url 'employee_list' %}">Employee</a>
       <a class="btn btn-sm btn-outline-light" href="{% url 'customer_list' %}">Customer</a>
@@ -43,7 +43,7 @@
   </div>
 </nav>
 
-<div class="container py-4">
+<div class="container">
   {% block content %}{% endblock %}
 </div>
 
