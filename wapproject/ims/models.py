@@ -23,10 +23,10 @@ class Employee(models.Model):
     phone = models.CharField(max_length=20)
     email = models.EmailField()
 
-    dept = models.ForeignKey(Department, on_delete=models.CASCADE)
+    dept = models.ForeignKey(Department, on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
-        return self.emp_name
+        return f"{self.emp_name} ({self.designation})"
 
 
 class Customer(models.Model):

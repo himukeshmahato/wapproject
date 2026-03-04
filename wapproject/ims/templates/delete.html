@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card p-4">
+  <h4 class="mb-2">{{ title }}</h4>
+  <p class="text-muted">Are you sure you want to delete: <b>{{ obj }}</b> ?</p>
+
+  <form method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger" type="submit">Yes Delete</button>
+
+    {% if key == "department" %}
+      <a class="btn btn-secondary" href="{% url 'department_list' %}">Cancel</a>
+    {% elif key == "employee" %}
+      <a class="btn btn-secondary" href="{% url 'employee_list' %}">Cancel</a>
+    {% elif key == "customer" %}
+      <a class="btn btn-secondary" href="{% url 'customer_list' %}">Cancel</a>
+    {% elif key == "project" %}
+      <a class="btn btn-secondary" href="{% url 'project_list' %}">Cancel</a>
+    {% elif key == "product" %}
+      <a class="btn btn-secondary" href="{% url 'product_list' %}">Cancel</a>
+    {% elif key == "assignedto" %}
+      <a class="btn btn-secondary" href="{% url 'assignedto_list' %}">Cancel</a>
+    {% elif key == "projectproduct" %}
+      <a class="btn btn-secondary" href="{% url 'projectproduct_list' %}">Cancel</a>
+    {% endif %}
+  </form>
+</div>
+
+{% endblock %}
